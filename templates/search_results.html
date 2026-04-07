@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ search_type }}: {{ query }}</h2>
+{% if donors %}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="table-danger">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Blood Type</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for donor in donors %}
+            <tr>
+                <td>{{ donor.name }}</td>
+                <td>{{ donor.age }}</td>
+                <td><span class="blood-type">{{ donor.blood_type }}</span></td>
+                <td>{{ donor.contact }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p>No donors found with {{ search_type }}: {{ query }}</p>
+{% endif %}
+<a href="{{ url_for('search') }}" class="btn btn-secondary">New Search</a>
+{% endblock %}

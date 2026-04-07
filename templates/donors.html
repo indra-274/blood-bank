@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Registered Donors</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-danger">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Blood Type</th>
+                <th>Contact</th>
+                <th>Last Donation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for donor in donors %}
+            <tr>
+                <td>{{ donor.id }}</td>
+                <td>{{ donor.name }}</td>
+                <td>{{ donor.age }}</td>
+
