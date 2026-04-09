@@ -21,4 +21,17 @@
                 <td>{{ donor.id }}</td>
                 <td>{{ donor.name }}</td>
                 <td>{{ donor.age }}</td>
-
+                <td><span class="blood-type">{{ donor.blood_type }}</span></td>
+                <td>{{ donor.contact }}</td>
+                <td>{{ donor.last_donation or 'Not recorded' }}</td>
+                <td>
+                    <a href="{{ url_for('delete_donor', donor_id=donor.id) }}" 
+                       class="btn btn-sm btn-danger"
+                       onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
