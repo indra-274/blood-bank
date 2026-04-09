@@ -1,4 +1,4 @@
-FROM python:4.9-slim
+FROM python:3.9-slim
 
 WORKDIR /app
 
@@ -16,4 +16,3 @@ EXPOSE 5000
 
 # Run the application
 CMD ["python", "app.py"]
-
