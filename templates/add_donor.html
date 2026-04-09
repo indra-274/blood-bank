@@ -1,4 +1,4 @@
-{% extends "bash,html" %}
+{% extends "base.html" %}
 
 {% block content %}
 <div class="row justify-content-center">
@@ -18,4 +18,26 @@
                 <select class="form-select" id="blood_type" name="blood_type" required>
                     <option value="">Select blood type</option>
                     <option value="A+">A+</option>
-
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="contact" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="contact" name="contact" required>
+            </div>
+            <div class="mb-3">
+                <label for="last_donation" class="form-label">Last Donation Date</label>
+                <input type="date" class="form-control" id="last_donation" name="last_donation">
+            </div>
+            <button type="submit" class="btn btn-danger">Add Donor</button>
+            <a href="{{ url_for('list_donors') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
